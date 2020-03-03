@@ -32,9 +32,10 @@ def SOQL_Query():
         
         print("Running Query:")
         for f in fieldmap:
+            #creating query
             SOQL = 'SELECT ' + args.columns + " FROM " + args.object + ' WHERE ' + args.where_field + '=' + "'" + str(f) + "'"
             #print(SOQL)
-            qryResult = sf.query(SOQL)
+            qryResult = sf.query(SOQL) #Running query
             isDone = qryResult['done']
             #print(qryResult['records'])
             
